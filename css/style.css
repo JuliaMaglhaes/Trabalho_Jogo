@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow: hidden;
+}
+#container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100vh;
+}
+
+#backgroundGame{
+    width: 100%;
+    height:100vh;
+    background-image: url(../img/PNG/cyberpunk-street.png);
+    background-size: cover;
+    
+}
+#cybergamecanvas{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    background-image: url(../img/sky2.png);
+    background-position: cover;
+    background-size: cover;
+}
+
+#nuvem{
+    width:100%;
+    height:90%;;
+    position: absolute;
+    /* background-color: #53384f; */
+    background-image: url(../img/clouds_1.png);
+    z-index: 9;
+    animation: mover2 190s linear infinite;
+}
+#nuvem::after{
+    content:"";
+    position:absolute;
+    left:0px;
+    width: 100%;
+    height: 90%;
+}
+
+#chao{
+    width:100%;
+    height:100px;
+    position: absolute;
+    background-image: url(../img/fluidBrown_top.png);
+    z-index: 99999;
+    bottom: 0;
+    animation: mover 50s linear infinite;
+}
+
+#chao::after{
+    content:"";
+    position:absolute;
+    left:0px;
+    width: 100%;
+    height: 100px;
+}
+
+@keyframes mover{
+    from{
+        background-position-x: 100vw;
+    }
+    to{
+        background-position-x: 0vw;
+    }
+}
+@keyframes mover2{
+    from{
+        background-position-x: -100vw;
+    }
+    to{
+        background-position-x: 0vw;
+    }
+}
+
+.game{
+    position: absolute;
+    width: 100%;
+    /* background-color: rgba(255, 0, 0, 0.123); */
+    /* margin-left: 30px; */
+    height:100%;
+    z-index: 999;
+}
+#cowCharater{
+    background-image: url(../img/cow.png);
+    width: 70px;
+    height:62px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 99999;
+} 
+
+
+.obstacle{
+    background-image: url(../img/ladderWide_mid.png);
+    width:60px;
+    height:350px;
+    max-height: 450px;
+    position: absolute;
+    /* bottom:0; */
+}
+
+.top{
+    top:-250px;
+    background-image: url(../img/ladderWide_mid.png);
+    width:60px;
+    height:450px;
+    position: absolute;
+    transform: rotate(180deg);
+}
+
+#alien{
+    background-image: url(../img/shipBlue_manned.png);
+    position: absolute;
+    width:10%;
+    height:15%;
+    z-index: 999999;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top:0;
+    left:160px;
+    transform: rotate(12deg)
+    
+}
+
+#placar{
+    margin-left:30px;
+    margin-top:30px;
+    background-color: #fff;
+    width:190px;
+    height:70px;
+    display:flex;
+    z-index: 999;
+    justify-content:center;
+    align-items:center;
+    border-radius:10px;
+    position: absolute;
+}
