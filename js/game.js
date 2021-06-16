@@ -6,9 +6,9 @@ const scor = document.querySelector('#placar');
 window.onload = function(){
     let gravity = 4;
     let gameover = false;
-    let gap = 800;
-    let cowX = 30;
-    let cowY = 400;
+    let gap = 430;
+    let cowX = 220;
+    let cowY = 290;
     let score = 0;
 
     const startGame = () => {
@@ -73,9 +73,14 @@ window.onload = function(){
                 areaGame.removeChild(obstacle);
             }
             
-            if ((cowY === 70) || (obstacleX  === cowX + 70)){
+            // if ((cowY === 70) || (obstacleX  === cowX + 70)){
+            //     gameOver();
+            //     console.log('a')
+            // }
+
+            if ( obstacleX > 160 && obstacleX < 270 && cowX === 220){
+                console.log('btaue')
                 gameOver();
-                console.log('a')
             }
 
             // score
@@ -83,12 +88,12 @@ window.onload = function(){
                 score +=1
             }
 
-            if (cowX < obstacleX + 60 && cowX + 70 > obstacleX){
-                if(cowY < obstacleY + 40 && 62 + cowY > obstacleY){
-                    console.log('co')
-                    gameOver();
-                }
-            }
+            // if (cowX < obstacleX + 60 && cowX + 70 > obstacleX){
+            //     if(cowY < obstacleY + 40 && 62 + cowY > obstacleY){
+            //         console.log('co')
+            //         gameOver();
+            //     }
+            // }
             
         }
         let loop = setInterval(moveObstacle, 20);
